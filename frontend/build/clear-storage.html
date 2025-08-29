@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Storage</title>
+</head>
+<body>
+    <h1>Storage Cleared</h1>
+    <p>모든 로컬 저장소가 초기화되었습니다.</p>
+    <p>이제 <a href="http://localhost:3000">로그인 페이지</a>로 이동하세요.</p>
+    <script>
+        // 모든 localStorage 데이터 삭제
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        // 특정 키만 삭제하려면:
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        localStorage.removeItem('language');
+        
+        console.log('All storage cleared!');
+        
+        // 3초 후 자동으로 로그인 페이지로 이동
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3000/login';
+        }, 3000);
+    </script>
+</body>
+</html>
